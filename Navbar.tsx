@@ -6,8 +6,8 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Aapki uploaded photo ka link
-  const profileImg = "https://ibb.co/DfmzVXRH";
+  // Aapka Postimages Direct Image Link
+  const profileImg = "https://i.postimg.cc/347Tkv4p/profile.jpg";
 
   useEffect(() => {
     const handleScroll = () => {
