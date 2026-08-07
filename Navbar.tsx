@@ -37,14 +37,7 @@ export default function Navbar() {
             <span className="flex items-center gap-2"><MapPin size={14} /> Sheikhpura, Bihar</span>
           </div>
         </div>
-      </div> <div className="flex items-center gap-3">
-  {/* Small Circle Profile Image in Top Right Corner */}
-  <img 
-    src="/profile.jpg" 
-    alt="Profile" 
-    className="w-10 h-10 md:w-11 md:h-11 rounded-full object-cover border-2 border-brand-orange shadow-sm hover:scale-105 transition-transform cursor-pointer"
-  />
-</div>
+      </div>
 
       {/* Main Navbar */}
       <nav className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-3' : 'bg-white/95 backdrop-blur-sm py-4'}`}>
@@ -66,7 +59,7 @@ export default function Navbar() {
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex space-x-8 items-center">
+            <div className="hidden md:flex space-x-6 items-center">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
@@ -82,10 +75,22 @@ export default function Navbar() {
               >
                 Appointment
               </a>
+
+              {/* Top Right Circle Profile Image */}
+              <img 
+                src="/profile.jpg" 
+                alt="Profile" 
+                className="w-10 h-10 rounded-full object-cover border-2 border-brand-orange shadow-sm hover:scale-105 transition-transform cursor-pointer ml-2"
+              />
             </div>
 
-            {/* Mobile Menu Button */}
-            <div className="md:hidden flex items-center">
+            {/* Mobile Menu Button & Profile Image */}
+            <div className="md:hidden flex items-center gap-3">
+              <img 
+                src="/profile.jpg" 
+                alt="Profile" 
+                className="w-9 h-9 rounded-full object-cover border-2 border-brand-orange shadow-sm"
+              />
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="text-gray-700 hover:text-brand-orange focus:outline-none"
@@ -96,7 +101,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Dropdown Menu */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
