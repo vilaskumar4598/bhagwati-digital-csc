@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Landmark, UserCheck, CreditCard, FileText, FileBadge, 
-  CarFront, Book, CheckCircle, Plane, Train, 
+  CarFront, Book, Plane, Train, 
   Bus, Hotel, Smartphone, Zap, Droplet, 
   Flame, GraduationCap, Medal, FileDown, Camera, 
-  Printer, Crop, Wallet, ShieldCheck
+  Printer, Crop, Wallet, ShieldCheck, ExternalLink
 } from 'lucide-react';
 
 export default function Services() {
@@ -19,56 +19,56 @@ export default function Services() {
     { id: 'digital', name: 'Digital Services' },
   ];
 
-  const servicesData: Record<string, {name: string, icon: any}[]> = {
+  const servicesData: Record<string, {name: string, icon: any, link: string}[]> = {
     government: [
-      { name: 'Aadhaar Update & Print', icon: <UserCheck /> },
-      { name: 'PAN Card Apply/Correction', icon: <CreditCard /> },
-      { name: 'Voter ID Services', icon: <UserCheck /> },
-      { name: 'Passport Application', icon: <Plane /> },
-      { name: 'Birth & Death Certificate', icon: <FileText /> },
-      { name: 'Income Certificate', icon: <FileBadge /> },
-      { name: 'Caste Certificate', icon: <FileBadge /> },
-      { name: 'Residential Certificate', icon: <FileBadge /> },
-      { name: 'Driving License Services', icon: <CarFront /> },
-      { name: 'Ration Card Services', icon: <Book /> },
+      { name: 'Aadhaar Update & Print', icon: <UserCheck />, link: 'https://myaadhaar.uidai.gov.in/' },
+      { name: 'PAN Card Apply/Correction', icon: <CreditCard />, link: 'https://www.onlineservices.nsdl.com/paam/endUserRegisterContact.html' },
+      { name: 'Voter ID Services', icon: <UserCheck />, link: 'https://voters.eci.gov.in/' },
+      { name: 'Passport Application', icon: <Plane />, link: 'https://www.passportindia.gov.in/' },
+      { name: 'Birth & Death Certificate', icon: <FileText />, link: 'https://crsorgi.gov.in/' },
+      { name: 'Income Certificate', icon: <FileBadge />, link: 'https://serviceonline.bihar.gov.in/' },
+      { name: 'Caste Certificate', icon: <FileBadge />, link: 'https://serviceonline.bihar.gov.in/' },
+      { name: 'Residential Certificate', icon: <FileBadge />, link: 'https://serviceonline.bihar.gov.in/' },
+      { name: 'Driving License Services', icon: <CarFront />, link: 'https://parivahan.gov.in/' },
+      { name: 'Ration Card Services', icon: <Book />, link: 'https://epds.bihar.gov.in/' },
     ],
     banking: [
-      { name: 'AEPS Money Withdrawal', icon: <Wallet /> },
-      { name: 'Money Transfer', icon: <CreditCard /> },
-      { name: 'Mini Statement', icon: <FileText /> },
-      { name: 'Bank Account Opening', icon: <Landmark /> },
-      { name: 'PMJJBY & PMSBY', icon: <ShieldCheck /> },
-      { name: 'Atal Pension Yojana', icon: <ShieldCheck /> },
-      { name: 'Loan Assistance', icon: <Landmark /> },
+      { name: 'AEPS Money Withdrawal', icon: <Wallet />, link: '#contact' },
+      { name: 'Money Transfer', icon: <CreditCard />, link: '#contact' },
+      { name: 'Mini Statement', icon: <FileText />, link: '#contact' },
+      { name: 'Bank Account Opening', icon: <Landmark />, link: '#contact' },
+      { name: 'PMJJBY & PMSBY', icon: <ShieldCheck />, link: '#contact' },
+      { name: 'Atal Pension Yojana', icon: <ShieldCheck />, link: '#contact' },
+      { name: 'Loan Assistance', icon: <Landmark />, link: '#contact' },
     ],
     online: [
-      { name: 'Railway Ticket Booking', icon: <Train /> },
-      { name: 'Flight Ticket Booking', icon: <Plane /> },
-      { name: 'Bus Ticket Booking', icon: <Bus /> },
-      { name: 'Hotel Booking', icon: <Hotel /> },
-      { name: 'Mobile Recharge', icon: <Smartphone /> },
-      { name: 'DTH Recharge', icon: <Monitor /> },
-      { name: 'Electricity Bill Payment', icon: <Zap /> },
-      { name: 'Water Bill Payment', icon: <Droplet /> },
-      { name: 'Gas Booking', icon: <Flame /> },
+      { name: 'Railway Ticket Booking', icon: <Train />, link: 'https://www.irctc.co.in/' },
+      { name: 'Flight Ticket Booking', icon: <Plane />, link: 'https://www.irctc.co.in/' },
+      { name: 'Bus Ticket Booking', icon: <Bus />, link: 'https://www.redbus.in/' },
+      { name: 'Hotel Booking', icon: <Hotel />, link: '#contact' },
+      { name: 'Mobile Recharge', icon: <Smartphone />, link: '#contact' },
+      { name: 'DTH Recharge', icon: <Monitor />, link: '#contact' },
+      { name: 'Electricity Bill Payment', icon: <Zap />, link: 'https://www.nbpdcl.co.in/' },
+      { name: 'Water Bill Payment', icon: <Droplet />, link: '#contact' },
+      { name: 'Gas Booking', icon: <Flame />, link: '#contact' },
     ],
     education: [
-      { name: 'Online Admission Forms', icon: <GraduationCap /> },
-      { name: 'Scholarship Forms', icon: <Medal /> },
-      { name: 'Exam Form Fill-up', icon: <FileText /> },
-      { name: 'Result Download', icon: <FileDown /> },
-      { name: 'Admit Card Print', icon: <Printer /> },
-      { name: 'Online Courses Registration', icon: <Monitor /> },
+      { name: 'Online Admission Forms', icon: <GraduationCap />, link: '#contact' },
+      { name: 'Scholarship Forms', icon: <Medal />, link: 'https://pmsonline.bih.nic.in/' },
+      { name: 'Exam Form Fill-up', icon: <FileText />, link: '#contact' },
+      { name: 'Result Download', icon: <FileDown />, link: '#contact' },
+      { name: 'Admit Card Print', icon: <Printer />, link: '#contact' },
+      { name: 'Online Courses Registration', icon: <Monitor />, link: '#contact' },
     ],
     digital: [
-      { name: 'Passport Size Photo', icon: <Camera /> },
-      { name: 'Lamination', icon: <FileText /> },
-      { name: 'Xerox & Printing', icon: <Printer /> },
-      { name: 'Resume/CV Making', icon: <FileText /> },
-      { name: 'Document Scanning', icon: <Crop /> },
-      { name: 'PVC Card Printing', icon: <CreditCard /> },
-      { name: 'Website Design', icon: <Monitor /> },
-      { name: 'Logo Design', icon: <Crop /> },
+      { name: 'Passport Size Photo', icon: <Camera />, link: '#contact' },
+      { name: 'Lamination', icon: <FileText />, link: '#contact' },
+      { name: 'Xerox & Printing', icon: <Printer />, link: '#contact' },
+      { name: 'Resume/CV Making', icon: <FileText />, link: '#contact' },
+      { name: 'Document Scanning', icon: <Crop />, link: '#contact' },
+      { name: 'PVC Card Printing', icon: <CreditCard />, link: '#contact' },
+      { name: 'Website Design', icon: <Monitor />, link: '#contact' },
+      { name: 'Logo Design', icon: <Crop />, link: '#contact' },
     ]
   };
 
@@ -110,18 +110,25 @@ export default function Services() {
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
             >
               {servicesData[activeTab].map((service, idx) => (
-                <div 
+                <a 
                   key={idx}
-                  className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow flex items-center gap-4 group cursor-default"
+                  href={service.link}
+                  target={service.link.startsWith('http') ? "_blank" : "_self"}
+                  rel="noopener noreferrer"
+                  className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-orange-200 transition-all flex items-center justify-between group cursor-pointer"
                 >
-                  <div className="w-12 h-12 bg-orange-50 text-brand-orange rounded-lg flex items-center justify-center group-hover:bg-brand-orange group-hover:text-white transition-colors">
-                    {/* Render icon with standard size */}
-                    <div className="w-6 h-6 flex items-center justify-center">
-                      {service.icon}
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-orange-50 text-brand-orange rounded-lg flex items-center justify-center group-hover:bg-brand-orange group-hover:text-white transition-colors">
+                      <div className="w-6 h-6 flex items-center justify-center">
+                        {service.icon}
+                      </div>
                     </div>
+                    <span className="font-medium text-gray-800 group-hover:text-brand-orange transition-colors">{service.name}</span>
                   </div>
-                  <span className="font-medium text-gray-800">{service.name}</span>
-                </div>
+                  {service.link.startsWith('http') && (
+                    <ExternalLink size={16} className="text-gray-400 group-hover:text-brand-orange shrink-0" />
+                  )}
+                </a>
               ))}
             </motion.div>
           </AnimatePresence>
@@ -131,7 +138,6 @@ export default function Services() {
   );
 }
 
-// Quick fallback for Monitor icon which wasn't fully imported in the right place potentially
 function Monitor(props: any) {
   return <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
 }
