@@ -2,14 +2,12 @@ import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
-// Photo Ko Direct Import Kiya Gaya Hai
-import profileImg from '../profile.jpg'; // Agar photo src folder me hai
-// Note: Agar photo src/assets folder me rakhi hai toh use karein:
-// import profileImg from '../assets/profile.jpg';
-
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  // Aapki uploaded photo ka link
+  const profileImg = "https://ibb.co/DfmzVXRH";
 
   useEffect(() => {
     const handleScroll = () => {
