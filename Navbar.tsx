@@ -2,6 +2,11 @@ import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
+// Photo Ko Direct Import Kiya Gaya Hai
+import profileImg from '../profile.jpg'; // Agar photo src folder me hai
+// Note: Agar photo src/assets folder me rakhi hai toh use karein:
+// import profileImg from '../assets/profile.jpg';
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -78,7 +83,7 @@ export default function Navbar() {
 
               {/* Top Right Circle Profile Image */}
               <img 
-                src="/profile.jpg" 
+                src={profileImg} 
                 alt="Profile" 
                 className="w-10 h-10 rounded-full object-cover border-2 border-brand-orange shadow-sm hover:scale-105 transition-transform cursor-pointer ml-2"
               />
@@ -87,7 +92,7 @@ export default function Navbar() {
             {/* Mobile Menu Button & Profile Image */}
             <div className="md:hidden flex items-center gap-3">
               <img 
-                src="/profile.jpg" 
+                src={profileImg} 
                 alt="Profile" 
                 className="w-9 h-9 rounded-full object-cover border-2 border-brand-orange shadow-sm"
               />
